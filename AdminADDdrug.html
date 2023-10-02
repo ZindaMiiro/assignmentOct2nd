@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration for Drug Information</title>
+    <style>
+        body {
+            background-color: green;
+            color: lightblue;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: lightgreen;
+            color: black;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Drug Information</h1>
+    <form method="POST" action="AdminAddDrug.php" enctype="multipart/form-data">
+        <label for="Drug_No">Drug Number:</label>
+        <input type="number" name="Drug_No" id="Drug_No" required><br>
+
+        <label for="Drug_Name">Drug Name:</label>
+        <input type="text" name="Drug_Name" id="Drug_Name" required><br>
+        
+        <label for="Serial_Number">Serial Number:</label>
+        <input type="text" name="Serial_Number" id="Serial_Number" required><br>
+
+        <label for="Quantity">Quantity:</label>
+        <input type="text" name="Quantity" id="Quantity" required><br>
+
+        <label for="Man_DATE">Manufacturing Date:</label>
+        <input type="date" name="Man_DATE" id="Man_DATE" required><br>
+
+        <label for="Exp_Date">Expiration Date:</label>
+        <input type="date" name="Exp_Date" id="Exp_Date" required><br>
+
+        <label for="Drug_image">Drug Image:</label>
+        <input type="file" name="Drug_image" id="Drug_image" accept="image/*" required><br>
+
+        <input type="submit" value="INSERT">
+    </form>
+</body>
+</html>

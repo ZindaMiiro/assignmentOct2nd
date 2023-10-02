@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Home Page</title>
+  <style>
+    body {
+      background-image: url("PharmaHome.png.jpeg");
+      margin: 0;
+      padding: 0;
+    }
+
+    .username {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: rgb(7, 42, 54);
+    }
+
+    .h4 {
+      color: black;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgb(58, 23, 120);
+      color: white;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-right: 10mm;
+    }
+
+    .button-container {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var params = new URLSearchParams(window.location.search);
+      var username = params.get("Username");
+
+      // Check if the user is not logged in (Username parameter is missing)
+      if (!username) {
+        window.location.href = 'AdminLogin.html';
+      }
+
+      var welcomeMessage = document.createElement("h2");
+      welcomeMessage.textContent = "Welcome, " + username + "!";
+      var container = document.getElementsByClassName("container")[0];
+      container.appendChild(welcomeMessage);
+    });
+
+    // Function to logout and redirect to the login page
+    function logout() {
+      // Redirect the user to the login page
+      window.location.href = 'AdminLogin.html';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: rgb(7, 42, 54); font-style: italic; margin: 0;">pharma</h1>
+    <h3 class="username" id="username"></h3>
+    <h4>ADMIN CONTROL PANEL</h4>
+    <p><u>Use the tools below to do operations to the system</u></p>
+    <br><br>
+    <div class="button-container">
+      <a href="AdminPatient.html">
+        <button class="button" onclick="showAlert()">Patient side</button>
+      </a>
+    </div>
+    <div class="button-container">
+      <a href="AdminDoctor.html">
+        <button class="button" onclick="showAlert()">Doctor side</button>
+      </a>
+    </div>
+    <div class="button-container">
+      <a href="AdminPharmacist.html">
+        <button class="button" onclick="showAlert()">Pharmacist side</button>
+      </a>
+    </div>
+    <div class="button-container">
+      <a href="AdminInventory.html">
+        <button class="button" onclick="showAlert()">Inventory side</button>
+      </a>
+    </div>
+    <!-- Logout Button -->
+    <div class="button-container">
+      <button class="button" onclick="logout()">Logout</button>
+    </div>
+  </div>
+</body>
+</html>
